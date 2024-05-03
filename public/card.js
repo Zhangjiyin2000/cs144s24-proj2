@@ -4,9 +4,10 @@ const NO_DESCRIPTION_TEXT = "(No description)";
 export default class Card {
   constructor(title, color) {
     //TODO
-    // Fine the template card element and clone it
+    // Fine the template card element
     const template = document.querySelector(".template.card");
-    console.log(template);
+    
+    //  Clone the template card
     this.card = template.cloneNode(true);
 
     // Set the title
