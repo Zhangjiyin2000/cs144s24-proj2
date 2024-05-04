@@ -6,6 +6,42 @@ export default class App {
     //TODO
     // Find the TODO column
     this.todoCol = document.getElementById("todo");
+
+    // Setup event handlers
+    this.setupEventHandlers();
+  }
+
+  setupEventHandlers() {
+    const form = document.getElementById('addCard');  // Form reference
+    const titleInput = document.getElementById('cardTitle');
+    const colorInput = document.getElementById('cardColor');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();  // Prevent default form submission
+
+      const title = titleInput.value.trim();
+      const color = colorInput.value.trim() || "#ffffff";  // Default color
+
+      if (title === "") {
+        console.error("Title is required.");
+        return;
+      }
+
+      // Add a new card to the "To Do" section
+      this.addCard("todo", title, color);
+
+      // Clear the form inputs
+      titleInput.value = "";
+      colorInput.value = "";
+    });
+
+    // Handle "Enter" key to trigger form submission
+    form.addEventListener('keydown', (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        form.dispatchEvent(new Event("submit"));  // Trigger form submission
+      }
+    });
   }
 
   addCard(col, title, color) {
