@@ -59,10 +59,18 @@ export default class Card {
         descriptionElem.classList.remove("hidden");
       }, { once: true });  // Ensure listener is removed after triggering
     });
+
+    // Setup the move button
+    const moveButton = this.card.querySelector(".startMove");
+    moveButton.addEventListener("click", () => {
+      // Start moving this card
+      this.mover.startMoving(this.card);
+    });
   }
 
   addToCol(colElem, mover) {
     //TODO
+    this.mover = mover; // Store the Mover instance
     colElem.appendChild(this.card);
 
   }

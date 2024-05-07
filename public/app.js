@@ -7,6 +7,9 @@ export default class App {
     // Find the TODO column
     this.todoCol = document.getElementById("todo");
 
+    // Initialize a single instance of Mover
+    this.mover = new Mover(); 
+
     // Setup event handlers
     this.setupEventHandlers();
   }
@@ -54,7 +57,9 @@ export default class App {
 
     // Add the card to the column
     //newCard.addToCol(col, new Mover());
-    newCard.addToCol(colElement);
+    newCard.addToCol(colElement, this.mover);
+
+    return newCard;
   }
 
   //TODO
