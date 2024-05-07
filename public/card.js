@@ -6,7 +6,7 @@ export default class Card {
     //TODO
     // Fine the template card element
     const template = document.querySelector(".template.card");
-    
+
     //  Clone the template card
     this.card = template.cloneNode(true);
 
@@ -21,6 +21,20 @@ export default class Card {
 
     // Remove template class in newly created card to make it visible
     this.card.classList.remove("template");
+
+    // Setup event handlers
+    this.setupEventHandlers();
+  }
+
+  setupEventHandlers() {
+    // Setup the delete button
+    const deleteButton = this.card.querySelector(".delete");
+    deleteButton.addEventListener("click", () => {
+      this.card.remove();
+    });
+
+    // Setup the edit button
+    
   }
 
   addToCol(colElem, mover) {
@@ -36,4 +50,5 @@ export default class Card {
   }
 
   //TODO
+  
 }
