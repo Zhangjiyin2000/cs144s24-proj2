@@ -11,3 +11,73 @@
 }
 
 /*TODO*/
+
+/* Fonts for interactors: */
+
+/* Base font size and font family for the entire page */
+body {
+  font-size: 1rem; 
+  font-family: Arial, sans-serif; 
+}
+
+input,
+button,
+textarea {
+  font-size: inherit; 
+  font-family: inherit; 
+}
+
+textarea {
+  font-family: Arial, sans-serif; 
+}
+
+/* Card selected for moving:  */
+
+.moving {
+  border: 2px solid black;
+}
+
+/* Edit description text box:  */
+
+textarea {
+  width: 100%; 
+  height: 5rem; 
+  background-color: inherit; 
+}
+
+/* Whitespace in descriptions:  */
+
+.description {
+  /* Newlines and multiple/leading spaces will show up */
+  white-space: break-spaces; 
+}
+
+/* Card buttons:  */
+.edit,
+.startMove,
+.delete {
+  border: none; 
+  background-color: inherit; 
+}
+
+.edit:hover,
+.startMove:hover,
+.delete:hover {
+  cursor: pointer; 
+  background-color: rgba(0, 0, 0, 0.25); 
+}
+
+/* Move here buttons:  */
+
+.moveHere {
+  border: none; 
+  background-color: inherit; 
+  color: gray;
+  font-size: small;
+}
+
+.moveHere:hover {
+  cursor: pointer; 
+  background-color: #e0e0e0; 
+  color: black;
+}

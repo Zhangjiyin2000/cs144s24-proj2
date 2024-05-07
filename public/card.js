@@ -51,7 +51,7 @@ export default class Card {
       // When user clicks or tabs away, update description and return to normal state
       textarea.addEventListener("blur", () => {
         // Set new description
-        const newDescription = textarea.value.trim();
+        const newDescription = textarea.value;
         this.setDescription(newDescription);
 
         // Hide textarea, show description
