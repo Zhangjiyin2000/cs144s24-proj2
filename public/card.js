@@ -34,7 +34,31 @@ export default class Card {
     });
 
     // Setup the edit button
-    
+    const editButton = this.card.querySelector(".edit");
+    editButton.addEventListener("click", () => {
+      const descriptionElem = this.card.querySelector(".description");
+      const textarea = this.card.querySelector(".editDescription");
+
+      // Hide description, show textarea
+      descriptionElem.classList.add("hidden");
+      textarea.classList.remove("hidden");
+
+      // Pre-populate textarea and focus/select text
+      textarea.value = descriptionElem.textContent;  // Copy current description
+      textarea.focus();  // Set focus on textarea
+      textarea.select();  // Select all text
+
+      // When user clicks or tabs away, update description and return to normal state
+      textarea.addEventListener("blur", () => {
+        // Set new description
+        const newDescription = textarea.value.trim();
+        this.setDescription(newDescription);
+
+        // Hide textarea, show description
+        textarea.classList.add("hidden");
+        descriptionElem.classList.remove("hidden");
+      }, { once: true });  // Ensure listener is removed after triggering
+    });
   }
 
   addToCol(colElem, mover) {
