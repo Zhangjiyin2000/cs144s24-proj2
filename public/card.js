@@ -57,7 +57,7 @@ export default class Card {
         // Hide textarea, show description
         textarea.classList.add("hidden");
         descriptionElem.classList.remove("hidden");
-      }, { once: true });  // Ensure listener is removed after triggering
+      }, true );
     });
 
     // Setup the move button

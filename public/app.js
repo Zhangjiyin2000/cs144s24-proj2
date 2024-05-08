@@ -23,7 +23,8 @@ export default class App {
       event.preventDefault();  // Prevent default form submission
 
       const title = titleInput.value.trim();
-      const color = colorInput.value.trim() || "#ffffff";  // Default color
+      // const color = colorInput.value.trim() || "#ffffff";  // Default color
+      const color = colorInput.value;
 
       if (title === "") {
         console.error("Title is required.");
