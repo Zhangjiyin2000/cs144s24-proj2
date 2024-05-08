@@ -27,6 +27,11 @@ export default class Card {
 
     // Make the card draggable
     this.card.setAttribute("draggable", "true");
+
+    // Set drag event listener for the card
+    this.card.addEventListener("dragstart", (event) => {
+      console.log(event);
+    })
   }
 
   setupEventHandlers() {

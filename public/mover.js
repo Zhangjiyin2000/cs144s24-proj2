@@ -74,21 +74,26 @@ export default class Mover {
   }
 
   //TODO
-  handleDrop(section) {
+  
+  // for 10 extra credit points
+
+  // handleDrop(section) {
+  //   if (!this.movingCard) return;
+
+  //   // Append the moving card to the section
+  //   section.appendChild(this.movingCard);
+
+  //   // Reset state after dropping
+  //   this.stopMoving();
+  // }
+
+  // for additional 5 extra credit points
+
+  handleDropCardToMoveHereButton(moveHereButton) {
     if (!this.movingCard) return;
 
-    // Append the moving card to the section
-    section.appendChild(this.movingCard);
-
-    // Reset state after dropping
-    this.stopMoving();
-  }
-
-  handleDropCard(card) {
-    if (!this.movingCard) return;
-
-    // Append the moving card to the section
-    card.after(this.movingCard);
+    // Move the moving card into the moveHere Button 
+    moveHereButton.prepend(this.movingCard);
 
     // Reset state after dropping
     this.stopMoving();
