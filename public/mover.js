@@ -74,18 +74,18 @@ export default class Mover {
   }
 
   //TODO
-  
+
   // for 10 extra credit points
 
-  // handleDrop(section) {
-  //   if (!this.movingCard) return;
+  handleDrop(section) {
+    if (!this.movingCard) return;
 
-  //   // Append the moving card to the section
-  //   section.appendChild(this.movingCard);
+    // Append the moving card to the section
+    section.appendChild(this.movingCard);
 
-  //   // Reset state after dropping
-  //   this.stopMoving();
-  // }
+    // Reset state after dropping
+    this.stopMoving();
+  }
 
   // for additional 5 extra credit points
 
