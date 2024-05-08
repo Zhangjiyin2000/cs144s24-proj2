@@ -24,6 +24,9 @@ export default class Card {
 
     // Setup event handlers
     this.setupEventHandlers();
+
+    // Make the card draggable
+    this.card.setAttribute("draggable", "true");
   }
 
   setupEventHandlers() {

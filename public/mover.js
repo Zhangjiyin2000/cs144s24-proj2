@@ -74,4 +74,23 @@ export default class Mover {
   }
 
   //TODO
+  handleDrop(section) {
+    if (!this.movingCard) return;
+
+    // Append the moving card to the section
+    section.appendChild(this.movingCard);
+
+    // Reset state after dropping
+    this.stopMoving();
+  }
+
+  handleDropCard(card) {
+    if (!this.movingCard) return;
+
+    // Append the moving card to the section
+    card.after(this.movingCard);
+
+    // Reset state after dropping
+    this.stopMoving();
+  }
 }
