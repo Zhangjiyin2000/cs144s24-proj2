@@ -38,6 +38,7 @@ export default class Card {
     // Setup the delete button
     const deleteButton = this.card.querySelector(".delete");
     deleteButton.addEventListener("click", () => {
+      this.mover.stopMoving();
       this.card.remove();
     });
 
@@ -86,7 +87,8 @@ export default class Card {
   setDescription(text) {
     //TODO
     const descriptionElem = this.card.querySelector('.description');
-    if (text !== "") descriptionElem.textContent = text;
+    // if (text !== "") descriptionElem.textContent = text;
+    descriptionElem.textContent = text;
   }
 
   //TODO

@@ -28,20 +28,20 @@ export default class App {
         event.preventDefault();
         this.mover.handleDrop(col); // Handle card drop in this section
       });
+    });
 
-      // for additional 5 extra credit points
+    // for additional 5 extra credit points
 
-      // Setup drag-and-drop listeners for each moveHere button
-      const moveHereButtons = document.querySelectorAll(".moveHere");
-      moveHereButtons.forEach((button) => {
-        button.addEventListener("dragover", (event) => {
-          event.preventDefault();
-        });
+    // Setup drag-and-drop listeners for each moveHere button
+    const moveHereButtons = document.querySelectorAll(".moveHere");
+    moveHereButtons.forEach((button) => {
+      button.addEventListener("dragover", (event) => {
+        event.preventDefault();
+      });
 
-        button.addEventListener("drop", (event) => {
-          event.preventDefault();
-          this.mover.handleDropCard(button); 
-        });
+      button.addEventListener("drop", (event) => {
+        event.preventDefault();
+        this.mover.handleDropCardToMoveHereButton(button); 
       });
     });
   }
@@ -53,6 +53,8 @@ export default class App {
 
     form.addEventListener('submit', (event) => {
       event.preventDefault();  // Prevent default form submission
+
+      this.mover.stopMoving();
 
       const title = titleInput.value.trim();
       // const color = colorInput.value.trim() || "#ffffff";  // Default color

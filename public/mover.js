@@ -44,7 +44,18 @@ export default class Mover {
       moveHereTop.addEventListener("click", (event) => {
         this.moveCard(col, 0);
         event.currentTarget.remove();  // Remove the "Move Here" button after moving
-      }); // Move to the top of the column
+      }); 
+      // moveHereTop.addEventListener("dragover", (event) => {
+      //   event.preventDefault();
+      //   this.moveCard(col, 0);
+      //   event.currentTarget.remove();  // Remove the "Move Here" button after moving
+      // }); 
+      // moveHereTop.addEventListener("drop", (event) => {
+      //   event.preventDefault();
+      //   this.moveCard(col, 0);
+      //   event.currentTarget.remove();  // Remove the "Move Here" button after moving
+      // }); 
+      // Move to the top of the column
       col.querySelector(".columnTitle").after(moveHereTop);
 
       // Add "Move Here" buttons after each card
@@ -56,7 +67,18 @@ export default class Mover {
         moveHere.addEventListener("click", (event) => {
           this.moveCard(col, index + 1);
           event.currentTarget.remove();  // Remove the "Move Here" button after moving
-        }); // Move after this card
+        }); 
+        // moveHere.addEventListener("dragover", (event) => {
+        //   event.preventDefault();
+        //   this.moveCard(col, index + 1);
+        //   event.currentTarget.remove();  // Remove the "Move Here" button after moving
+        // }); 
+        // moveHere.addEventListener("drop", (event) => {
+        //   event.preventDefault();
+        //   this.moveCard(col, index + 1);
+        //   event.currentTarget.remove();  // Remove the "Move Here" button after moving
+        // }); 
+        // Move after this card
         c.after(moveHere);
       });
     });
@@ -93,7 +115,7 @@ export default class Mover {
     if (!this.movingCard) return;
 
     // Move the moving card into the moveHere Button 
-    moveHereButton.prepend(this.movingCard);
+    moveHereButton.after(this.movingCard);
 
     // Reset state after dropping
     this.stopMoving();
