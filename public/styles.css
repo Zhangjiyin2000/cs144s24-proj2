@@ -74,8 +74,6 @@ textarea {
   background-color: inherit; 
   color: gray;
   font-size: small;
-  /* width: 100%;
-  overflow: auto; */
 }
 
 .moveHere:hover {

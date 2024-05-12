@@ -18,32 +18,44 @@ export default class App {
     // for 10 extra credit points
 
     // Setup drag-and-drop listeners for each section
-    const columns = [this.todoCol, this.doingCol, this.doneCol];
-    columns.forEach((col) => {
-      col.addEventListener("dragover", (event) => {
-        event.preventDefault(); // Allow dragging over this section
-      });
+    // const columns = [this.todoCol, this.doingCol, this.doneCol];
+    // columns.forEach((col) => {
+    //   col.addEventListener("dragover", (event) => {
+    //     event.preventDefault(); // Allow dragging over this section
+    //   });
 
-      col.addEventListener("drop", (event) => {
-        event.preventDefault();
-        this.mover.handleDrop(col); // Handle card drop in this section
-      });
-    });
+    //   col.addEventListener("drop", (event) => {
+    //     event.preventDefault();
+    //     this.mover.handleDrop(col); // Handle card drop in this section
+
+    //     // const moveHereButtons = col.querySelectorAll(".moveHere");
+    //     // moveHereButtons.forEach((button) => {
+    //     //       button.addEventListener("dragover", (event) => {
+    //     //       event.preventDefault();
+    //     //     });
+
+    //     //     button.addEventListener("drop", (event) => {
+    //     //       event.preventDefault();
+    //     //       this.mover.handleDropCardToMoveHereButton(button); 
+    //     //     });
+    //     // });
+    //   });
+    // });
 
     // for additional 5 extra credit points
 
     // Setup drag-and-drop listeners for each moveHere button
-    const moveHereButtons = document.querySelectorAll(".moveHere");
-    moveHereButtons.forEach((button) => {
-      button.addEventListener("dragover", (event) => {
-        event.preventDefault();
-      });
+    // const moveHereButtons = document.querySelectorAll(".moveHere");
+    // moveHereButtons.forEach((button) => {
+    //   button.addEventListener("dragover", (event) => {
+    //     event.preventDefault();
+    //   });
 
-      button.addEventListener("drop", (event) => {
-        event.preventDefault();
-        this.mover.handleDropCardToMoveHereButton(button); 
-      });
-    });
+    //   button.addEventListener("drop", (event) => {
+    //     event.preventDefault();
+    //     this.mover.handleDropCardToMoveHereButton(button); 
+    //   });
+    // });
   }
 
   setupEventHandlers() {

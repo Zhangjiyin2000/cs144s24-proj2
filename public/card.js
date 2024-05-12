@@ -30,6 +30,7 @@ export default class Card {
 
     // Set drag event listener for the card
     this.card.addEventListener("dragstart", (event) => {
+      this.mover.startMoving(this.card);
       console.log(event);
     })
   }

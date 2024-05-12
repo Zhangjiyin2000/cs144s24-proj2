@@ -45,16 +45,16 @@ export default class Mover {
         this.moveCard(col, 0);
         event.currentTarget.remove();  // Remove the "Move Here" button after moving
       }); 
-      // moveHereTop.addEventListener("dragover", (event) => {
-      //   event.preventDefault();
-      //   this.moveCard(col, 0);
-      //   event.currentTarget.remove();  // Remove the "Move Here" button after moving
-      // }); 
-      // moveHereTop.addEventListener("drop", (event) => {
-      //   event.preventDefault();
-      //   this.moveCard(col, 0);
-      //   event.currentTarget.remove();  // Remove the "Move Here" button after moving
-      // }); 
+      moveHereTop.addEventListener("dragover", (event) => {
+        event.preventDefault();
+        this.moveCard(col, 0);
+        event.currentTarget.remove();  // Remove the "Move Here" button after moving
+      }); 
+      moveHereTop.addEventListener("drop", (event) => {
+        event.preventDefault();
+        this.moveCard(col, 0);
+        event.currentTarget.remove();  // Remove the "Move Here" button after moving
+      }); 
       // Move to the top of the column
       col.querySelector(".columnTitle").after(moveHereTop);
 
@@ -68,16 +68,16 @@ export default class Mover {
           this.moveCard(col, index + 1);
           event.currentTarget.remove();  // Remove the "Move Here" button after moving
         }); 
-        // moveHere.addEventListener("dragover", (event) => {
-        //   event.preventDefault();
-        //   this.moveCard(col, index + 1);
-        //   event.currentTarget.remove();  // Remove the "Move Here" button after moving
-        // }); 
-        // moveHere.addEventListener("drop", (event) => {
-        //   event.preventDefault();
-        //   this.moveCard(col, index + 1);
-        //   event.currentTarget.remove();  // Remove the "Move Here" button after moving
-        // }); 
+        moveHere.addEventListener("dragover", (event) => {
+          event.preventDefault();
+          this.moveCard(col, index + 1);
+          event.currentTarget.remove();  // Remove the "Move Here" button after moving
+        }); 
+        moveHere.addEventListener("drop", (event) => {
+          event.preventDefault();
+          this.moveCard(col, index + 1);
+          event.currentTarget.remove();  // Remove the "Move Here" button after moving
+        }); 
         // Move after this card
         c.after(moveHere);
       });
@@ -115,7 +115,7 @@ export default class Mover {
     if (!this.movingCard) return;
 
     // Move the moving card into the moveHere Button 
-    moveHereButton.after(this.movingCard);
+    moveHereButton.prepend(this.movingCard);
 
     // Reset state after dropping
     this.stopMoving();
